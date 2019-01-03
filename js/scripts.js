@@ -1,1 +1,1 @@
-"use strict";console.log("its working, yay");var $grid=$(".grid").masonry({itemSelector:".grid-item",columnWidth:".grid-sizer",gutter:".gutter-sizer",percentPosition:!0});$grid.imagesLoaded().progress(function(){$grid.masonry("layout")}),VanillaTilt.init(document.querySelector(".tilting-logo"),{max:10,speed:800}),lightbox.option({resizeDuration:500,wrapAround:!0,disableScrolling:!0,fitImagesInViewport:!0,showImageNumberLabel:!1,alwaysShowNavOnTouchDevices:!0});
+"use strict";console.log("its working, yay");
