@@ -1,0 +1,273 @@
+// Header, footer, navigation, section 
+section.hero {
+  background-image: url("../img/hero.jpg");
+  background-size: cover;
+  z-index: 9999;
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  background-position: center;
+  top: 0;
+  .tilting-logo {
+    height: 100%;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    margin: auto;
+    filter: drop-shadow(0 0 10px rgba(0, 0, 0, .5));
+    max-width: 50%;
+    flex-direction: column;
+    padding: 0;
+    svg {
+      width: 100%;
+    }
+  }
+  .hero-nav {
+    display: inline-flex;
+    justify-content: space-around;
+    text-transform: uppercase;
+    background-color: #fff;
+    margin-top: 10px;
+    font-size: 1vw;
+    filter: drop-shadow(0 0 10px rgba(0, 0, 0, .25));
+    letter-spacing: 10px;
+    a {
+      padding: 10px 20px;
+      font-weight: 700;
+    }
+  }
+}
+header {
+  background: #ffffff;
+  text-transform: uppercase;
+  font-size: .75rem;
+  letter-spacing: .5rem;
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  top: 0;
+  z-index: 999;
+  svg {
+    height: 100%;
+  }
+  div {
+    padding: 20px;
+    width: 100%;
+    max-width: 2400px;
+    display: flex;
+    justify-content: space-between;
+  }
+  #desktop-nav {
+    display: flex;
+    justify-content: space-evenly;
+    text-align: center;
+    background: #fff;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  #mobile-nav {
+    display: none;
+  }
+  li {
+    text-align: right;
+    &:hover {
+      > ul {
+        display: block;
+      }
+      > a {
+        color: rgba(75,176,161, .5);
+      }
+    }
+    a {
+      color: rgba(75,176,161, 1);
+      display: block;
+      margin-left: 40px;
+      text-decoration: none;
+      line-height: 60px;
+      width: inherit;
+    }
+  }
+}
+main {
+  margin-top: 100px;
+  .grid {
+    background: #fff;
+    max-width: 2400px;
+    margin: auto;
+  }
+  /* clear fix */
+  .grid:after {
+    content: '';
+    display: block;
+    clear: both;
+  }
+  /* ---- .grid-item ---- */
+  .grid-sizer, .grid-item {
+    width: 24.66%;
+  }
+  .gutter-sizer {
+    width: .45%;
+  }
+  .grid-item {
+    float: left;
+    margin-bottom: .45%;
+  }
+  .grid-item img {
+    display: block;
+    max-width: 100%;
+  }
+  .grid-item--width2 {
+    width: 49.77%;
+  }
+  img {
+    &:hover {
+      opacity: .65;
+      transition-duration: 500ms;
+      cursor: crosshair;
+    }
+  }
+  #lightbox {
+    top: 100px;
+  }
+}
+@media only screen and (max-width: 480px) {
+  section.hero {
+    .tilting-logo {
+      max-width: 80%;
+    }
+    .hero-nav {
+      flex-direction: column;
+      background-color: transparent;
+      align-items: center;
+      letter-spacing: 5px;
+      a {
+        color: #fff;
+        font-size: 24px;
+        filter: drop-shadow(0 0 10px rgba(0, 0, 0, 1));
+        line-height: 24px;
+      }
+    }
+  }
+  header {
+    div {
+      padding: 20px 20px 20px 10px;
+    }
+    #desktop-nav {
+      display: none;
+    }
+    #anitas-logo {
+      width: 140px;
+    }
+    a {
+    text-decoration: none;
+    color: #4bb0a1;
+    transition: color 0.3s ease;
+    }
+    #mobile-nav {
+      display: block;
+      position: relative;
+      top: 32px;
+      z-index: 1;
+      right: 0px;
+      -webkit-user-select: none;
+      user-select: none;
+      padding: 0;
+      height: 100%;
+    }
+    #mobile-nav input {
+      display: block;
+      width: 40px;
+      height: 32px;
+      position: absolute;
+      top: -7px;
+      right: 13px;
+      cursor: pointer;
+      opacity: 0; /* hide this */
+      z-index: 2; /* and place it over the hamburger */
+      -webkit-touch-callout: none;
+    }
+    #mobile-nav span {
+      display: block;
+      width: 33px;
+      height: 2px;
+      margin-bottom: 5px;
+      background: rgb(75, 176, 161);
+      z-index: 1;
+      transform-origin: 4px 0px;
+      transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+                  background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+                  opacity 0.55s ease;
+    }
+    #mobile-nav span:nth-of-type(1) {
+      position: absolute;
+      right: 20px;
+    }
+    #mobile-nav span:nth-of-type(2) {
+      position: absolute;
+      right: 20px;
+      top: 9px;
+    }
+    #mobile-nav span:nth-of-type(3) {
+      position: absolute;
+      right: 20px;
+      top: 18px;
+    }
+    #mobile-nav span:first-child {
+      transform-origin: 0% 0%;
+    }
+    #mobile-nav span:nth-last-child(2) {
+      transform-origin: 0% 100%;
+    }
+    /* Transform all the slices of hamburger into a crossmark.*/
+    #mobile-nav input:checked ~ span {
+      opacity: 1;
+      transform: rotate(45deg) translate(-2px, -1px);
+      background: #d8d8d8;
+    }
+    /* But let's hide the middle one. */
+    #mobile-nav input:checked ~ span:nth-last-child(3) {
+      opacity: 0;
+      transform: rotate(0deg) scale(0.2, 0.2);
+    }
+    /* Ohyeah and the last one should go the other direction */
+    #mobile-nav input:checked ~ span:nth-last-child(2) {
+      transform: rotate(-45deg) translate(0, -1px);
+    }
+    /* Make this absolute positioned at the top right of the screen */
+    #menu {
+      position: absolute;
+      margin-top: -32px;
+      padding: 100px 22px 0 40px;
+      right: -1px;
+      background: #ffffff;
+      list-style-type: none;
+      height: 100vh;
+      -webkit-font-smoothing: antialiased;
+      /* to stop flickering of text in safari */
+      transform-origin: 0% 0%;
+      transform: translate(125%, 0);
+      transition: transform 1s cubic-bezier(0.77,0.2,0.05,1.0);
+      box-shadow: 25px 0px 40px 30px rgba(125,125,125,1);
+    }
+    #menu li {
+      padding: 20px 0;
+      font-size: 18px;
+      letter-spacing: 0.25;
+    }
+    /*  And let's slide it in from the right */
+    #mobile-nav input:checked ~ ul{
+      transform: none;
+    }
+  }
+  main {
+    margin-top: 82px;
+    .grid-sizer, .grid-item {
+      width: 100%;
+    }
+    .grid-item {
+      margin-bottom: 2%;
+    }
+  }
+}

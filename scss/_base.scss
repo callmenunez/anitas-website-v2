@@ -1,0 +1,17 @@
+// Boilerplate css: typography rules, animations, etc
+html {
+  font-family: "Open Sans", Helvetica, sans-serif;
+  font-size: 16px;
+}
+body {
+  margin: 0;
+}
+a {
+  text-decoration: none;
+  color: rgba(75, 176, 161, 1);
+  font-weight: 400;
+  &:hover {
+    color: rgba(75, 176, 161, .5);
+  }
+}
+$green-color: rgba(75, 176, 161, 1);
