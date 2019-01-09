@@ -9,7 +9,7 @@ app.use(express.static('public'))
 app.set('view engine', 'nunjucks');
 
 const indexRoute = require('./routes');
-const navRoutes = require('./routes/navigation.js');
+const navRoutes = require('./routes/header.js');
 
 app.use(indexRoute);
 app.use(navRoutes);
