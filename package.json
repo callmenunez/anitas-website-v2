@@ -5,12 +5,14 @@
   "main": "gulpfile.js",
   "dependencies": {
     "browser-sync": "^2.26.0",
+    "express": "^4.16.4",
     "gulp-autoprefixer": "^6.0.0",
     "gulp-connect-php": "^1.0.3",
     "gulp-inline-source": "^3.2.0",
     "gulp-sass": "^4.0.1",
     "masonry-layout": "^4.2.2",
-    "normalize.css": "^8.0.0"
+    "normalize.css": "^8.0.0",
+    "nunjucks": "^3.1.6"
   },
   "devDependencies": {
     "@babel/core": "^7.1.2",
@@ -18,10 +20,13 @@
     "gulp": "^3.9.1",
     "gulp-babel": "^8.0.0",
     "gulp-htmlmin": "^5.0.1",
+    "gulp-nodemon": "^2.4.2",
     "gulp-uglify": "^3.0.1"
   },
   "scripts": {
-    "test": "its working!"
+    "test": "its working!",
+    "start": "node app",
+    "postinstall": "gulp default"
   },
   "repository": {
     "type": "git",
