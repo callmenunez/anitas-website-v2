@@ -31,12 +31,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/callmenunez/website-template.git"
+    "url": "git+https://github.com/callmenunez/anitas-website-v2.git"
   },
   "author": "David Nunez",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/callmenunez/website-template/issues"
+    "url": "https://github.com/callmenunez/anitas-website-v2/issues"
   },
-  "homepage": "https://github.com/callmenunez/website-template#readme"
+  "homepage": "https://github.com/callmenunez/anitas-website-v2#readme"
 }
