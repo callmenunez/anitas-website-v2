@@ -20,5 +20,5 @@ nunjucks.configure('views', {
 });
 
 app.listen(3000, () => {
-  console.log('Heck yeak, the application is running on localhost:3000')
+  console.log('Heck yeah, the application is running on localhost:3000')
 });

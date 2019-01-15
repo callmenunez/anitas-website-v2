@@ -11,7 +11,7 @@ gulp.task('start', function () {
   nodemon({
     script: 'index.js',
     ext: 'js html',
-    env: { 'NODE_ENV': 'development' }
+    env: { 'NODE_ENV': 'production' }
   })
 });
 
@@ -38,11 +38,12 @@ gulp.task('scripts', function() {
     }));
 });
 
-//Watch task
+// Watch task
 gulp.task('default',['start'], function() {
   gulp.watch('./public/scss/*.scss',['styles']);
   gulp.watch('./public/es6/*.js',['scripts']);
 });
+
 
 
 
