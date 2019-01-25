@@ -1,6 +1,9 @@
 {
   "name": "website-template",
   "version": "1.0.0",
+  "engines": {
+    "node": "11.6.0"
+  },
   "description": "basic template to start any new project",
   "main": "index.js",
   "dependencies": {
