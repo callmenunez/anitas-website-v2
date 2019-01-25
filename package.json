@@ -25,9 +25,7 @@
     "gulp-uglify": "^3.0.1"
   },
   "scripts": {
-    "test": "its working!",
-    "start": "node app",
-    "postinstall": "gulp default"
+    "test": "its working!"
   },
   "repository": {
     "type": "git",
