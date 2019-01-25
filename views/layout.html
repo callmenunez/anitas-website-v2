@@ -53,5 +53,14 @@
   <script src="js/masonry.pkgd.min.js"></script>
   <script src="js/lightbox.min.js"></script>
   <script src="js/scripts.js"></script>
+  <script>
+    let angle = 0,
+    img = document.getElementById('anita-x');
+    document.getElementById('mobile-nav').onclick = function() {
+      console.log('getting here');
+      angle = (angle + 90) % 360;
+      img.className = "rotate" + angle;
+    }
+  </script>
 </body>
 </html>

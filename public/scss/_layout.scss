@@ -45,13 +45,49 @@ header {
   #anitas-logo {
     height: 100%;
     fill: #fff;
-    padding: 60px;
+    padding: 40px;
     filter: drop-shadow(0px 0px 10px rgba(0,0,0,0.75));
   }
   #anita-x {
     width: 60px;
     fill: #cecece;
     margin-bottom: 40px;
+    transform-origin: top left;
+    /* IE 10+, Firefox, etc. */
+    -webkit-transform-origin: top left;
+    /* Chrome */
+    -ms-transform-origin: top left;
+    /* IE 9 */
+  }
+  #anita-x {
+    width: 60px;
+    fill: #cecece;
+    margin-bottom: 40px;
+    transform-origin: top left;
+    /* IE 10+, Firefox, etc. */
+    -webkit-transform-origin: top left;
+    /* Chrome */
+    -ms-transform-origin: top left;
+    /* IE 9 */
+  }
+  // #mobile-nav.rotate90, #mobile-nav.rotate270 {
+  //   width: 100px;
+  //   height: 820px
+  // }
+  #mobile-nav.rotate90 #anita-x{
+    transform: rotate(90deg) translateY(-100%);
+    -webkit-transform: rotate(90deg) translateY(-100%);
+    -ms-transform: rotate(90deg) translateY(-100%);
+  }
+  #mobile-nav.rotate180 #anita-x{
+    transform: rotate(180deg) translate(-100%, -100%);
+    -webkit-transform: rotate(180deg) translate(-100%, -100%);
+    -ms-transform: rotate(180deg) translateX(-100%, -100%);
+  }
+  #mobile-nav.rotate270 #anita-x{
+    transform: rotate(270deg) translateX(-100%);
+    -webkit-transform: rotate(270deg) translateX(-100%);
+    -ms-transform: rotate(270deg) translateX(-100%);
   }
   #mobile-nav {
     display: block;
@@ -66,18 +102,23 @@ header {
     width: 200px;
     height: 60px;
     position: absolute;
-    top: 60px;
-    left: 60px;
+    top: 40px;
+    left: 40px;
     cursor: pointer;
     opacity: 0; /* hide this */
     z-index: 2; /* and place it over the hamburger */
     -webkit-touch-callout: none;
+    &:checked {
+      width: 60px;
+      top: 40px;
+      left: 40px;
+    }
   }
   /* Make this absolute positioned at the top right of the screen */
   #menu {
     position: absolute;
     margin: 0;
-    padding: 60px 60px 20px 60px;
+    padding: 40px 40px 20px 40px;
     left: 0;
     top: 0;
     background: #fff;
