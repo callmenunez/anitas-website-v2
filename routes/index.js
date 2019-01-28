@@ -6,7 +6,7 @@ router.get('/', (req, res) => {
 });
 
 router.get('/events', (req, res) => {
-  res.render('party.html')
+  res.render('events.html')
 });
 
 router.get('/environments', (req, res) => {
@@ -14,7 +14,7 @@ router.get('/environments', (req, res) => {
 });
 
 router.get('/travel', (req, res) => {
-  res.render('india.html')
+  res.render('travel.html')
 });
 
 module.exports = router;

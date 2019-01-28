@@ -14,7 +14,6 @@
 
 <body>
 
-  {% if 2 === 2 %}
   <header>
     <div id="mobile-nav">
       <input type="checkbox" />
@@ -22,29 +21,16 @@
       <ul id="menu">
         <svg id="anita-x" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 14.85 14.85" style="enable-background:new 0 0 14.85 14.85;" xml:space="preserve"><g><rect x="7.82" y="2.63" transform="matrix(0.7071 -0.7071 0.7071 0.7071 1.2387 9.2132)" class="st0" width="7.83" height="0.97"/><polygon class="st0" points="14.85,14.17 0.68,0 0,0.68 6.74,7.43 0,14.17 0.68,14.85 7.43,8.11 14.17,14.85 	"/></g></svg>
         <a href="/about"><li>About</li></a>
-        <li>Events</li>
-          <ul>
-            <a href="/party"><li>Party</li></a>
-            <a href="/wedding"><li>Wedding</li></a>
-          </ul>
+        <a href="/events"><li>Events</li></a>
         <li>Environments</li></a>
         <ul>
             <a href="/construction"><li>Construction</li></a>
             <a href="/interiors"><li>Interiors</li></a>
-            <a href="/landscape"><li>Landscape</li></a>
         </ul>
-        <li>Travel</li>
-          <ul>
-            <a href="/india"><li>India</li></a>
-            <a href="/hongkong"><li>Hong Kong</li></a>
-            <a href="/europe"><li>Europe</li></a>
-          </ul>
+        <a href="/travel"><li>Travel</li></a>
       </ul>
     </div>
   </header>
-  {% else %}
-  <h2>This is a test</h2>
-  {% endif %}
 
   {% block content %}
   {% endblock %}
