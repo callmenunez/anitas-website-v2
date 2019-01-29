@@ -1,5 +1,5 @@
 // Header, footer, navigation, section 
-section.hero {
+section.homepage {
   background-image: url("../img/hero.jpg");
   background-size: cover;
   z-index: 9999;
@@ -22,7 +22,7 @@ section.hero {
       width: 100%;
     }
   }
-  .hero-nav {
+  .homepage-nav {
     display: inline-flex;
     justify-content: space-around;
     text-transform: uppercase;
@@ -139,7 +139,7 @@ header {
       letter-spacing: .25rem;
       text-transform: uppercase;
       text-decoration: none;
-      color: #4bb0a1;
+      color: rgba(75, 176, 161, 1);
       transition: color 0.3s ease;
       font-weight: 700;
     }
@@ -176,10 +176,15 @@ header {
   }
 }
 main {
+  img {
+    width: 100%;
+    margin-bottom: 2px;
+    display:block;
+    margin-bottom: 8px;
+  }
   .horizontal-images {
     display: flex;
     width: 100vw;
-    margin-bottom: 4px;
     img {
       width: calc(50% - 4px);
       height: 100%;
@@ -191,17 +196,39 @@ main {
       }
     }
   }
-  img {
-    width: 100%;
-    margin-bottom: 2px;
+  .horizontal-mix-images {
+    display: inline-flex;
+    img {
+      height: 100%;
+      &:first-of-type {
+        width: calc(30.95% - 4px);
+        padding-right: 4px;
+      }
+      &:last-of-type {
+        width: calc(69.05% - 4px);
+        padding-left: 6px;
+      }
+    }
+  }
+  .travel, .about {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: rgba(75, 176, 161, .5);
+    h1 {
+      color: #fff;
+      font-weight: 400;
+    }
   }
 }
+
 @media only screen and (max-width: 480px) {
-  section.hero {
+  section.homepage {
     .logo-section {
       max-width: 80%;
     }
-    .hero-nav {
+    .homepage-nav {
       flex-direction: column;
       background-color: transparent;
       align-items: center;
@@ -216,11 +243,19 @@ main {
   }
 
   main {
-    .grid-sizer, .grid-item {
-      width: 100%;
-    }
-    .grid-item {
-      margin-bottom: 2%;
+    .horizontal-images, .horizontal-mix-images {
+      display: flex;
+      flex-direction: column;
+      img {
+        &:first-of-type {
+          width: 100%;
+          padding-right: 0;
+        }
+        &:last-of-type {
+          width: 100%;
+          padding-left: 0;
+        }
+      }
     }
   }
 }
