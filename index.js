@@ -9,7 +9,7 @@ app.use(bodyParser.urlencoded({extended:false}));
 app.use(express.static('public'))
 app.set('view engine', 'nunjucks');
 
-const indexRoute = require('./routes');
+const indexRoute = require('./routes/homepage.js');
 const navRoutes = require('./routes/nav.js');
 
 app.use(indexRoute);

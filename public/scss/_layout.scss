@@ -1,5 +1,5 @@
 // Header, footer, navigation, section 
-section.hero {
+section.homepage {
   background-image: url("../img/hero.jpg");
   background-size: cover;
   z-index: 9999;
@@ -22,7 +22,7 @@ section.hero {
       width: 100%;
     }
   }
-  .hero-nav {
+  .homepage-nav {
     display: inline-flex;
     justify-content: space-around;
     text-transform: uppercase;
@@ -224,11 +224,11 @@ main {
 }
 
 @media only screen and (max-width: 480px) {
-  section.hero {
+  section.homepage {
     .logo-section {
       max-width: 80%;
     }
-    .hero-nav {
+    .homepage-nav {
       flex-direction: column;
       background-color: transparent;
       align-items: center;
