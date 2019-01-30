@@ -91,6 +91,7 @@ section.navigation {
     position: absolute;
     top: 40px;
     left: 40px;
+    margin: 0;
     cursor: pointer;
     opacity: 0; /* hide this */
     z-index: 2; /* and place it over the hamburger */
@@ -103,15 +104,17 @@ section.navigation {
   }
   /* Make this absolute positioned at the top right of the screen */
   #menu {
+    display: flex;
+    flex-direction: column;
     position: absolute;
     margin: 0;
-    padding: 40px 40px 20px 40px;
+    padding: 40px;
     left: 0;
     top: 0;
     background: #fff;
     list-style-type: none;
-    height: 100vh;
-    -webkit-font-smoothing: antialiased;
+    height: calc(100vh - 80px);
+    -webkit-font-smoothig: antialiased;
     /* to stop flickering of text in safari */
     transform-origin: 0% 0%;
     transform: translate(-110%, 0);
@@ -120,6 +123,7 @@ section.navigation {
   }
   ul {
     padding: 0;
+    list-style-type: none;
     li {
       padding: 30px 0 20px;
       font-size: 1rem;
@@ -131,7 +135,6 @@ section.navigation {
       font-weight: 700;
     }
     ul {
-      list-style-type: none;
       li {
         font-size: 1rem;
         padding: 0 20px 20px;
@@ -143,15 +146,10 @@ section.navigation {
   #mobile-nav input:checked ~ ul{
     transform: none;
   }
+  a > li:hover {
+    color: rgba(75,176,161, .5);
+  }
   li {
-    &:hover {
-      > ul {
-        display: block;
-      }
-      > a {
-        color: rgba(75,176,161, .5);
-      }
-    }
     a {
       color: rgba(75,176,161, 1);
       display: block;
@@ -161,11 +159,25 @@ section.navigation {
       width: inherit;
     }
   }
+  .social-media {
+    display: flex;
+    align-items: flex-end;
+    height: 100%;
+  }
+  #instagram, #linkedin {
+    width: 30px;
+    fill: rgba(75,176,161, 1);
+    margin-right: 20px;
+    transition: all 0.5s;
+    align-self: flex-end;
+    &:hover {
+      fill: rgba(75,176,161, .5);
+    }
+  }
 }
 main {
   img {
     width: 100%;
-    margin-bottom: 2px;
     display:block;
     margin-bottom: 8px;
   }
@@ -249,11 +261,14 @@ main {
       }
     }
     #menu {
-      padding: 40px 20px 20px 40px;
+      padding: 40px;
     }
   }
 
   main {
+    img {
+      margin-bottom: 4px;
+    }
     .horizontal-images, .horizontal-mix-images {
       display: flex;
       flex-direction: column;

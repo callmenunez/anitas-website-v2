@@ -14,39 +14,12 @@
 
 <body>
 
-  <section class="navigation">
-    <div id="mobile-nav">
-      <input type="checkbox" />
-      <svg id="anitas-logo" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"viewBox="0 0 52.61 15.21" style="enable-background:new 0 0 52.61 15.21;" xml:space="preserve"><g><path class="st0" d="M16,13.17c-0.35,0-0.63,0.28-0.63,0.63c0,0.35,0.28,0.63,0.63,0.63c0.35,0,0.63-0.28,0.63-0.63C16.63,13.45,16.34,13.17,16,13.17 M16,15.21c-0.79,0-1.43-0.64-1.43-1.42c0-0.78,0.64-1.42,1.43-1.42c0.79,0,1.43,0.64,1.43,1.42C17.42,14.58,16.78,15.21,16,15.21"/></g><path class="st0" d="M6.3,2.45L3.33,9.16h5.92L6.3,2.45z M1.93,10.06L6.3,0l4.4,10.06H1.93z M1.77,12.67L0.8,14.9L0,14.53l1.21-2.75h10.2l1.21,2.75l-0.9,0.37l-0.97-2.22H1.77z"/><path class="st0" d="M23.62,5.63v8.96h-0.97V3.47l11.42,10.04v1.39L23.62,5.63z M22.65,0L33.1,9.2v-8.9h0.97v11.12L22.65,1.31V0z"/><g><path class="st0" d="M45.04,8.91V9.9h6.11c-0.95,2.35-3.3,4.04-6,4.04c-1.65,0-2.86-0.47-3.91-1.23c0,0-1.8-1.19-2.35-3.18c-0.15-0.55-0.35-1.61-0.35-2.18c0-3.51,3.02-6.39,6.4-6.39c0.41,0,0.74,0.02,1.01,0.06c0,0,1.72,0.21,3.46,1.7l0.76-0.78c-0.25-0.23-0.53-0.43-0.78-0.61c-0.53-0.39-1.71-0.9-1.71-0.9C46.84,0.1,45.88,0,44.95,0C41,0,37.57,3.31,37.57,7.35c0,1.43,0.39,2.88,1.11,4.02c0,0,0.65,1.03,1.19,1.49c1.3,1.18,2.94,2.04,5.29,2.04c3.61,0,6.67-2.6,7.32-6l-0.31,0H45.04z"/><rect x="45.04" y="6.95" class="st0" width="7.57" height="0.99"/></g></svg>
-      <ul id="menu">
-        <svg id="anita-x" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 14.85 14.85" style="enable-background:new 0 0 14.85 14.85;" xml:space="preserve"><g><rect x="7.82" y="2.63" transform="matrix(0.7071 -0.7071 0.7071 0.7071 1.2387 9.2132)" class="st0" width="7.83" height="0.97"/><polygon class="st0" points="14.85,14.17 0.68,0 0,0.68 6.74,7.43 0,14.17 0.68,14.85 7.43,8.11 14.17,14.85 	"/></g></svg>
-        <a href="/about"><li>About</li></a>
-        <a href="/events"><li>Events</li></a>
-        <li>Environments</li></a>
-        <ul>
-            <a href="/construction"><li>Construction</li></a>
-            <a href="/interiors"><li>Interiors</li></a>
-        </ul>
-        <a href="/travel"><li>Travel</li></a>
-      </ul>
-    </div>
-  </section>
+  {% include 'includes/navigation.html' %}
 
   {% block content %}
   {% endblock %}
-  <script src="js/jquery-3.3.1.min.js"></script>
-  <script src="js/imagesloaded.pkgd.min.js"></script>
-  <script src="js/masonry.pkgd.min.js"></script>
-  <script src="js/lightbox.min.js"></script>
-  <script src="js/scripts.js"></script>
-  <script>
-    let angle = 0,
-    img = document.getElementById('anita-x');
-    document.getElementById('mobile-nav').onclick = function() {
-      console.log('getting here');
-      angle = (angle + 90) % 360;
-      img.className = "rotate" + angle;
-    }
-  </script>
+
+  {% include 'includes/scripts.html' %}
+
 </body>
 </html>
