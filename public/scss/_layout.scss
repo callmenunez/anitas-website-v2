@@ -1,4 +1,4 @@
-// Header, footer, navigation, section 
+// header, footer, navigation, section 
 section.homepage {
   background-image: url("../img/hero.jpg");
   background-size: cover;
@@ -37,12 +37,14 @@ section.homepage {
     }
   }
 }
-header {
+section.navigation {
   position: fixed;
   justify-content: center;
   top: 0;
   z-index: 999;
   #anitas-logo {
+    transition: all 0.5s;
+    width: 200px;
     height: 100%;
     fill: #fff;
     padding: 40px;
@@ -59,21 +61,6 @@ header {
     -ms-transform-origin: top left;
     /* IE 9 */
   }
-  #anita-x {
-    width: 60px;
-    fill: #cecece;
-    margin-bottom: 40px;
-    transform-origin: top left;
-    /* IE 10+, Firefox, etc. */
-    -webkit-transform-origin: top left;
-    /* Chrome */
-    -ms-transform-origin: top left;
-    /* IE 9 */
-  }
-  // #mobile-nav.rotate90, #mobile-nav.rotate270 {
-  //   width: 100px;
-  //   height: 820px
-  // }
   #mobile-nav.rotate90 #anita-x{
     transform: rotate(90deg) translateY(-100%);
     -webkit-transform: rotate(90deg) translateY(-100%);
@@ -239,6 +226,30 @@ main {
         filter: drop-shadow(0 0 10px rgba(0, 0, 0, 1));
         line-height: 24px;
       }
+    }
+  }
+
+  section.navigation {
+    #anitas-logo {
+      width: 140px;
+      padding: 40px 20px 20px;
+    }
+    #anita-x {
+      width: 40px
+    }
+    #mobile-nav input {
+      width: 140px;
+      height: 40px;
+      top: 40px;
+      left: 20px;
+      &:checked {
+        width: 40px;
+        top: 40px;
+        left: 40px;
+      }
+    }
+    #menu {
+      padding: 40px 20px 20px 40px;
     }
   }
 
