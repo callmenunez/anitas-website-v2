@@ -1,8 +1,12 @@
 const express = require('express');
 const router = express.Router();
 
-router.get('/events', (req, res) => {
-  res.render('events.html')
+// router.get('/events', (req, res) => {
+//   res.render('events.html')
+// });
+
+router.get('/high-line', (req, res) => {
+  res.render('high-line.html')
 });
 
 router.get('/death-valley', (req, res) => {
