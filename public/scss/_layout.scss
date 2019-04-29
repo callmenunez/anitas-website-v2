@@ -1,10 +1,8 @@
 // header, footer, navigation, section 
 section.homepage {
-  background-image: url("../img/hero.jpg");
+  background: url("../img/hero.jpg") center center fixed;
   background-size: cover;
   height: 100vh;
-  z-index: 999;
-  position: relative;
   .logo-section {
     height: 100%;
     display: flex;
@@ -16,6 +14,31 @@ section.homepage {
     flex-direction: column;
     svg {
       width: 100%;
+    }
+  }
+  .triangle-section {
+    height: 50px;
+    position: absolute;
+    bottom: 50px;
+    width: 100vw;
+    justify-content: center;
+    display: flex;
+    .triangle {
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 20px 15px 0 15px;
+      border-color: #fff transparent transparent transparent;
+      display:block; 
+      animation-name: bounce;
+      animation-duration: 2s;
+      animation-iteration-count: 3;
+      filter: drop-shadow(0 0 10px rgba(0,0,0,.25));
+    }
+    @keyframes bounce {
+      0%   { margin-top:0; animation-timing-function: ease-out; }
+      50%  { margin-top:25px; animation-timing-function: ease-in; }
+      100% { margin-top:0; animation-timing-function: ease-out; }
     }
   }
   .horizontal-images {
@@ -91,21 +114,6 @@ section.navigation {
     -ms-transform-origin: top left;
     /* IE 9 */
   }
-  #mobile-nav.rotate90 #anita-x{
-    transform: rotate(90deg) translateY(-100%);
-    -webkit-transform: rotate(90deg) translateY(-100%);
-    -ms-transform: rotate(90deg) translateY(-100%);
-  }
-  #mobile-nav.rotate180 #anita-x{
-    transform: rotate(180deg) translate(-100%, -100%);
-    -webkit-transform: rotate(180deg) translate(-100%, -100%);
-    -ms-transform: rotate(180deg) translateX(-100%, -100%);
-  }
-  #mobile-nav.rotate270 #anita-x{
-    transform: rotate(270deg) translateX(-100%);
-    -webkit-transform: rotate(270deg) translateX(-100%);
-    -ms-transform: rotate(270deg) translateX(-100%);
-  }
   #mobile-nav {
     display: block;
     position: relative;
@@ -143,7 +151,8 @@ section.navigation {
     top: 0;
     background: #fff;
     list-style-type: none;
-    height: calc(100vh - 80px);
+    height: 100vh;
+    // height: calc(100vh - 80px);
     -webkit-font-smoothig: antialiased;
     /* to stop flickering of text in safari */
     transform-origin: 0% 0%;
@@ -211,7 +220,7 @@ main {
     display:block;
     margin-bottom: 8px;
     &.last-image {
-      margin-bottom: 100vh;
+      margin-bottom: 900px;
     }
   }
   .horizontal-images {
@@ -258,29 +267,63 @@ section.bio {
   position: fixed; 
   bottom: 0;
   z-index: -1;
-  padding: 5rem 5rem 2rem;
-  display: inline-flex;
+  display: flex;
   .headshot {
     width: 50vw;
+    display: flex;
+    justify-content: flex-end;
     img {
-      height: 100%;
-      width: inherit;
+      max-height: 800px;
     }
   }
   .description {
     display: flex;
-    align-items: center;
-    width: 100%;
-    p {
-      font-size: 2rem;
-      background: #dea025;
+    align-items: flex-end;
+    width: 50vw;
+    .bio-text {
+      background: #4bb0a1;
       padding: 4rem;
-      margin: 5rem 0 0 -3rem;
-      width: 30vw;
       color: #fff;
+      margin: 0 10rem 8rem -4rem;
+      max-width: 600px;
+    }
+    h1 {
+      font-size: 3rem;
+      font-weight: 300;
+      margin: 0 0 1rem;
+    }
+    p {
+      font-size: .9rem;
+      line-height: 1.5;
+    }
+    a {
+      color: #fff;
+      border-bottom: 1px dotted currentColor;
+      &:hover {
+        opacity: .5;
+      }
     }
   }
 }
+@media only screen and (max-width: 768px) {
+  section.bio {
+    .headshot {
+      width: 60vw;
+    }
+    .description {
+      width: 40vw;
+      .bio-text {
+        padding: 2rem;
+        margin-right: 0;
+        h1 {
+          font-size: 3rem;
+          margin-top: 1rem;
+        }
+      }
+    }
+  }
+}
+
 
 @media only screen and (max-width: 480px) {
   section.homepage {
@@ -299,6 +342,7 @@ section.bio {
       }
       a {
         font-size: 1rem;
+        filter: drop-shadow(0 0 10px rgba(0,0,0, 1));
       }
     }
   }
@@ -330,11 +374,11 @@ section.bio {
       &:checked {
         width: 40px;
         top: 40px;
-        left: 40px;
+        left: 20px;
       }
     }
     #menu {
-      padding: 40px;
+      padding: 40px 40px 20px;
     }
   }
 
@@ -353,6 +397,32 @@ section.bio {
         &:last-of-type {
           width: 100%;
           padding-left: 0;
+        }
+      }
+    }
+  }
+
+  section.bio {
+    flex-direction: column;
+    .headshot {
+      width: 100vw;
+      justify-content: flex-start;
+      img {
+        max-height: 400px;
+      }
+    }
+    .description {
+      width: 100vw;
+      margin-top: -5rem;
+      .bio-text {
+        padding: 2rem 2rem 3rem;
+        margin: 0 0 0 4rem;
+        h1 {
+          font-size: 2rem;
+          margin-top: 0;
+        }
+        p {
+          font-size: .75rem;
         }
       }
     }
